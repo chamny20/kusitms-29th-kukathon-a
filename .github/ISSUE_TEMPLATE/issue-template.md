@@ -1,7 +1,7 @@
 ---
-name: issue templete
-about: issue templete
-title: ''
+name: issue template
+about: issue template
+title: "[type]: 작업 내용"
 labels: ''
 assignees: ''
 

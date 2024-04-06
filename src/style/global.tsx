@@ -29,9 +29,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
-    zoom: 0.5;
     @font-face {
         font-family: 'Pretendard';
         src: url(${PRETENDARD}) format('woff2');

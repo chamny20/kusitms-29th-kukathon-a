@@ -6,11 +6,14 @@ import { useState } from 'react';
 import { OutForm } from '../components/step/OutForm';
 import { MiddleForm } from '../components/step/MiddleForm';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { nameState } from '../recoil/atoms';
 
 export const SchedulePage = () => {
   const [step, setStep] = useState<number>(0);
 
   const [selectedOutTime, setSelectedOutTime] = useState<string>('');
+  const name = useRecoilValue(nameState);
 
   const handleOutTimeSelection = (time: string) => {
     setSelectedOutTime(time);
@@ -21,7 +24,7 @@ export const SchedulePage = () => {
   return (
     <SchedulePageWrapper>
       <ScheduleTitle>
-        대헌님의 <span>하루 스케줄</span>을 알려주세요
+        {name}님의 <span>하루 스케줄</span>을 알려주세요
       </ScheduleTitle>
       <Step step={step} setStep={setStep} />
       <FormWrapper>

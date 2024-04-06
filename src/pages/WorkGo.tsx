@@ -4,18 +4,21 @@ import Write from '../assets/icon/write.svg';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import TodoTable from '../components/workgo/TodoTable';
+import { nameState } from '../recoil/atoms';
+import { useRecoilValue } from 'recoil';
 
 const WorkGo = () => {
   const navigate = useNavigate();
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
+  const name = useRecoilValue(nameState);
 
   return (
     <Container>
       <Content>
         <div>
           <Title>
-            {`2호선 출근러 대헌님의\n`}
+            {`2호선 출근러 ${name}님의\n`}
             <span style={{ fontWeight: 'bold' }}>2024년 4월 7일</span>의 출근행
           </Title>
           <Text>

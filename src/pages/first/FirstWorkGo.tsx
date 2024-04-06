@@ -4,14 +4,38 @@ import Write from '../../assets/icon/write.svg';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import TitleIcon from '../../assets/icon/title.svg';
+import { api } from '../../api';
+import { useRecoilValue } from 'recoil';
+import { nameState } from '../../recoil/atoms';
 
 const FirstWorkGo = () => {
   const navigate = useNavigate();
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
+  const name = useRecoilValue(nameState);
 
   const isClickEnabled = () => {
     return departure !== '' && arrival !== '';
+  };
+
+  const isClick = async () => {
+    navigate('/schedule');
+    try {
+      const data = {
+        startLocation: departure,
+        endLocation: arrival,
+      };
+      const response = await api.post('/api/v1/route', data);
+
+      if (response.data.isSuccess) {
+        console.log(response.data.result);
+        navigate('/schedule');
+      } else {
+        console.error('실패', response.data);
+      }
+    } catch (error) {
+      console.error('Error');
+    }
   };
   return (
     <Container>
@@ -20,7 +44,7 @@ const FirstWorkGo = () => {
         <Center>
           <Going>
             <Title>
-              {`대헌님의 `}
+              {`${name}님의 `}
               <span style={{ color: '#2477FF' }}>출발지</span>와{` `}
               <span style={{ color: '#2477FF' }}>도착지</span>를 알려주세요
             </Title>
@@ -42,12 +66,7 @@ const FirstWorkGo = () => {
               <Pen src={Write} />
             </Place2>
           </Going>
-          <Button
-            onClick={() => {
-              navigate('/schedule');
-            }}
-            disabled={!isClickEnabled()}
-          >
+          <Button onClick={isClick} disabled={!isClickEnabled()}>
             입력완료
           </Button>
         </Center>

@@ -37,13 +37,14 @@ export const GoalBoxContainer = styled.div`
     .item-detail {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 30px;
+      justify-content: center;
 
       .goal-list {
         display: flex;
         margin-top: 10px;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
       }
 
       .time-box {

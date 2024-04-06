@@ -44,7 +44,7 @@ const FirstWorkGo = () => {
           </Going>
           <Button
             onClick={() => {
-              navigate('/');
+              navigate('/schedule');
             }}
             disabled={!isClickEnabled()}
           >

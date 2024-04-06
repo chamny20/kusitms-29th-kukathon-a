@@ -7,7 +7,10 @@ export const LoginPage = () => {
   return (
     <LoginContainer>
       <LefLoginBox>
-        <div className="login-title">안녕하세요어쩌구</div>
+        <div className="login-title">
+          안녕하세요.
+          <br /> 출근행입니다!
+        </div>
         <p className="login-text">로그인하세요.</p>
         <InputBox>
           <div className="input-wrapper">

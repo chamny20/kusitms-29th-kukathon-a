@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import ThumbsUp from '../../assets/icon/thumbsUp.svg';
 
-const Card = () => {
+interface Todo {
+  tag: string;
+  region: string;
+  todo: string;
+  date: string;
+}
+
+const Card = ({ data }: { data: Todo }) => {
   return (
     <Container>
       <Top>
-        <Tag>독서</Tag>
-        <Region>원흥, 강남</Region>
+        <Tag>{data.tag}</Tag>
+        <Region>{data.region}</Region>
       </Top>
       <Gap>
-        <Title>주식공부</Title>
+        <Title>{data.todo}</Title>
         <Row>
-          <Date>24.04.07</Date>
+          <Date>{data.date}</Date>
           <Date>
             <img src={ThumbsUp} /> 13
           </Date>

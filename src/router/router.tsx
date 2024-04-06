@@ -4,6 +4,7 @@ import { TestPage } from '../pages/test/TestPage';
 import { KakaoCallback } from '../components/login/KakaoCallback';
 import WorkGo from '../pages/WorkGo';
 import FirstWorkGo from '../pages/first/FirstWorkGo';
+import RecentWorkPage from '../pages/RecentWorkPage';
 
 const Router = () => {
   return (
@@ -13,7 +14,7 @@ const Router = () => {
         <Route path="/first-workgo" element={<FirstWorkGo />} />
         <Route path="/workgo" element={<WorkGo />} />
         <Route path="/myworkroad" element={<MainPage />} />
-        <Route path="/recentworkroad" element={<MainPage />} />
+        <Route path="/recentworkroad" element={<RecentWorkPage />} />
         <Route path="/login" element={<KakaoCallback />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />

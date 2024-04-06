@@ -6,7 +6,9 @@ import { jwtTokenState } from '../../recoil/atoms';
 export const KakaoCallback = () => {
   const navigate = useNavigate();
   const jwtToken = new URL(window.location.href).searchParams.get('jwt');
+  const name = new URL(window.location.href).searchParams.get('name');
   console.log('jwtToken', jwtToken);
+  console.log('name', name);
 
   const setJwtToken = useSetRecoilState(jwtTokenState);
 

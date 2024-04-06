@@ -53,10 +53,12 @@ export const MiddleForm = () => {
 
   const handleStartChange = (event: SelectChangeEvent) => {
     setStartLunch(event.target.value as string);
+    localStorage.setItem('startLunchTime', startLunch);
   };
 
   const handleFinishChange = (event: SelectChangeEvent) => {
     setFinishLunch(event.target.value as string);
+    localStorage.setItem('endLunchTime', finishLunch);
   };
 
   return (

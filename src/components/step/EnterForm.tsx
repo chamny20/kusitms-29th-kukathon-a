@@ -53,6 +53,7 @@ export const EnterForm = () => {
 
   const handleChange = (event: SelectChangeEvent) => {
     setItem(event.target.value as string);
+    localStorage.setItem('startWorkTime', String(item));
   };
 
   return (

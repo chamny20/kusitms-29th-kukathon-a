@@ -7,6 +7,7 @@ import List from '../../assets/icon/list.svg';
 import ListBlack from '../../assets/icon/listBlack.svg';
 import Search from '../../assets/icon/search.svg';
 import Alarm from '../../assets/icon/alarm.svg';
+import Logo from '../../assets/icon/logo.svg';
 
 const Header = () => {
   const [current, setCurrent] = useState<string>('/');

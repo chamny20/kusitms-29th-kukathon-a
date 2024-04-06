@@ -1,0 +1,14 @@
+:root {
+  /* neutral */
+  --color-black: #2d2d2d;
+
+  --color-gray1: #4d4d4d;
+  --color-gray2: #717171;
+  --color-gray3: #89939e;
+
+  /* primary */
+
+  --color-main1: #3b64f6;
+  --color-main2: #b4c9ff;
+  --color-white: #fefefe;
+}

@@ -5,6 +5,7 @@ import { EnterForm } from '../components/step/EnterForm';
 import { useState } from 'react';
 import { OutForm } from '../components/step/OutForm';
 import { MiddleForm } from '../components/step/MiddleForm';
+import { useNavigate } from 'react-router-dom';
 
 export const SchedulePage = () => {
   const [step, setStep] = useState<number>(0);
@@ -14,6 +15,9 @@ export const SchedulePage = () => {
   const handleOutTimeSelection = (time: string) => {
     setSelectedOutTime(time);
   };
+
+  const navigate = useNavigate();
+
   return (
     <SchedulePageWrapper>
       <ScheduleTitle>
@@ -34,7 +38,14 @@ export const SchedulePage = () => {
         </div>
       </FormWrapper>
       {step === 2 && (
-        <SubmitButton selectedOutTime={selectedOutTime}>입력 완료</SubmitButton>
+        <SubmitButton
+          selectedOutTime={selectedOutTime}
+          onClick={() => {
+            navigate('/week-goal');
+          }}
+        >
+          입력 완료
+        </SubmitButton>
       )}
     </SchedulePageWrapper>
   );

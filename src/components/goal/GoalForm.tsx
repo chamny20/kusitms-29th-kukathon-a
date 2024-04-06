@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { SubmitButton } from '../../pages/SchedulePage';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const GoalForm = () => {
   const [firstInput, setFirstInput] = useState<string>('');
@@ -13,6 +14,8 @@ export const GoalForm = () => {
   const handleInput2 = (e: any) => {
     setSecondInput(e.target.value);
   };
+
+  const navigate = useNavigate();
 
   return (
     <GoalFormWrapper>
@@ -36,7 +39,15 @@ export const GoalForm = () => {
         </div>
       </InputBox>
       <div className="center-box">
-        <SubmitButton selectedOutTime={secondInput}>입력 완료</SubmitButton>
+        <SubmitButton
+          selectedOutTime={secondInput}
+          onClick={() => {
+            console.log('hi');
+            navigate('/workgo');
+          }}
+        >
+          입력 완료
+        </SubmitButton>
       </div>
     </GoalFormWrapper>
   );

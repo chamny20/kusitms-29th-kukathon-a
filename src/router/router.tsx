@@ -14,13 +14,13 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        {/* <Route path="/" element={<MainPage />} /> */}
         <Route path="/first-workgo" element={<FirstWorkGo />} />
         <Route path="/workgo" element={<WorkGo />} />
         <Route path="/myworkroad" element={<ResultPage />} />
         <Route path="/recentworkroad" element={<RecentWorkPage />} />
         <Route path="/login" element={<KakaoCallback />} />
-        <Route path="/user-login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/week-goal" element={<WeekGoalPage />} />
         <Route path="/schedule" element={<SchedulePage />} />

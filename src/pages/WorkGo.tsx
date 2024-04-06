@@ -47,7 +47,7 @@ const WorkGo = () => {
           </Todo>
           <Button
             onClick={() => {
-              navigate('/');
+              navigate('/myworkroad');
             }}
           >
             출근하기

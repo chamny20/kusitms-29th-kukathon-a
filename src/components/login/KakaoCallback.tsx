@@ -16,8 +16,8 @@ export const KakaoCallback = () => {
     if (jwtToken) {
       localStorage.setItem('jwtToken', jwtToken);
       setJwtToken(true);
-      //   navigate('/');
-      navigate(window.location.origin + '/');
+      navigate('/first-workgo');
+      //   navigate(window.location.origin + '/first-workgo');
     } else {
       console.error('예기치 못한 에러가 발생했습니다.');
     }

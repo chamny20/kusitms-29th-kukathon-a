@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { notify } from '../../hooks/notify';
-import Logo from '../../assets/icon/Logo.svg';
+import Logo from '../../assets/icon/logo.svg';
 
 const Header = () => {
   const [current, setCurrent] = useState<string>('/');
@@ -42,7 +42,7 @@ interface StyledLinkProps {
 }
 
 const StyledHeader = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 88px;
   background-color: #ffffff;
   border-bottom: 1px solid #e4e4e7;

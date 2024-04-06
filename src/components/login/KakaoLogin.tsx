@@ -25,9 +25,9 @@ export const KakaoBtn = styled.button`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 56px;
-  border-radius: 5px;
-  background: #ffe812;
+  height: 48px;
+  border-radius: 10px;
+  background: #ffe55a;
   gap: 4px;
   border: none;
   font-size: var(--text_b1);

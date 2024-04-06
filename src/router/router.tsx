@@ -8,6 +8,9 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/test1" element={<MainPage />} />
+        <Route path="/test2" element={<MainPage />} />
+        <Route path="/test3" element={<MainPage />} />
         <Route path="/login" element={<KakaoCallback />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />

@@ -1,4 +1,5 @@
 import Router from './router/router';
+import { Toaster } from 'react-hot-toast';
 import { GlobalStyle } from './style/global';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <GlobalStyle />
       <Router />
+      <Toaster />
     </>
   );
 }

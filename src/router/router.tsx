@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { MainPage } from '../pages/MainPage';
 import { TestPage } from '../pages/test/TestPage';
 import { KakaoCallback } from '../components/login/KakaoCallback';
 import WorkGo from '../pages/WorkGo';

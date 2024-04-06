@@ -6,6 +6,9 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/test1" element={<MainPage />} />
+        <Route path="/test2" element={<MainPage />} />
+        <Route path="/test3" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   );

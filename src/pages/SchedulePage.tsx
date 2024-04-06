@@ -6,17 +6,44 @@ import { useState } from 'react';
 import { OutForm } from '../components/step/OutForm';
 import { MiddleForm } from '../components/step/MiddleForm';
 import { useNavigate } from 'react-router-dom';
+import { postTimeTable } from '../api';
 
 export const SchedulePage = () => {
   const [step, setStep] = useState<number>(0);
 
   const [selectedOutTime, setSelectedOutTime] = useState<string>('');
 
+  // const startWorkTime: string | null = localStorage.getItem('startWorkTime');
+  // const startLunchTime = localStorage.getItem('startLunchTime');
+  // const endLunchTime = localStorage.getItem('endLunchTime');
+  // const endWorkTime = localStorage.getItem('endWorkTime');
+
   const handleOutTimeSelection = (time: string) => {
     setSelectedOutTime(time);
   };
 
   const navigate = useNavigate();
+
+  // const signToken: string | null =
+  //   (typeof window !== 'undefined' &&
+  //     window.localStorage.getItem('signToken')) ||
+  //   null;
+
+  const startWorkTime: string | null = localStorage.getItem('startWorkTime');
+  const startLunchTime: string | null = localStorage.getItem('startLunchTime');
+  const endLunchTime: string | null = localStorage.getItem('endLunchTime');
+  const endWorkTime: string | null = localStorage.getItem('endWorkTime');
+
+  const handleClick = () => {
+    navigate('/week-goal');
+    postTimeTable({ startWorkTime, startLunchTime, endLunchTime, endWorkTime })
+      .then((res) => {
+        console.log('res', res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <SchedulePageWrapper>
@@ -38,12 +65,7 @@ export const SchedulePage = () => {
         </div>
       </FormWrapper>
       {step === 2 && (
-        <SubmitButton
-          selectedOutTime={selectedOutTime}
-          onClick={() => {
-            navigate('/week-goal');
-          }}
-        >
+        <SubmitButton selectedOutTime={selectedOutTime} onClick={handleClick}>
           입력 완료
         </SubmitButton>
       )}

@@ -58,6 +58,7 @@ export const OutForm = ({ selectedOutTime, onSelectOutTime }: OutFormProps) => {
   const handleChange = (event: SelectChangeEvent) => {
     const selectedTime = event.target.value as string;
     onSelectOutTime(selectedTime); // 선택된 퇴근시간을 부모 컴포넌트로 전달
+    localStorage.setItem('endWorkTime', selectedOutTime);
   };
 
   return (

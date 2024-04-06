@@ -39,14 +39,17 @@ const FilterRow = styled.div`
 `;
 
 const Round = styled.div<StyledProps>`
-  display: flex;
+  display: inline-flex;
+  width: 65px;
   padding: 4px 12px;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 8px;
   border-radius: 100px;
   background: #fefefe;
-  color: ${({ $selected }) => ($selected ? '#3B64F6' : '#171719')};
-  border: 1px solid ${({ $selected }) => ($selected ? '#3B64F6' : '#171719')};
+  color: ${({ $selected }) => ($selected ? '#3B64F6' : '#9096A2')};
+  border: 1px solid ${({ $selected }) => ($selected ? '#3B64F6' : '#E4E4E7')};
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
